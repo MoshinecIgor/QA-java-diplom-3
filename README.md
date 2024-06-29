@@ -19,4 +19,5 @@ browser=yandex
 командной: 
 ```bash
 mvn clean test allure:report allure:serve  
-```# QA-java-diplom-3
+```
+# QA-java-diplom-3
