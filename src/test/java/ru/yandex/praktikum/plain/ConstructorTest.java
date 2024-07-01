@@ -3,7 +3,6 @@ package ru.yandex.praktikum.plain;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +10,6 @@ import ru.yandex.praktikum.WebDriverFactory;
 import ru.yandex.praktikum.page.MainPage;
 
 import static java.lang.Thread.sleep;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static ru.yandex.praktikum.TestUtils.MAIN_PAGE_URL;
 
