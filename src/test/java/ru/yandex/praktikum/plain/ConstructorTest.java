@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import ru.yandex.praktikum.WebDriverFactory;
 import ru.yandex.praktikum.page.MainPage;
 
+import java.util.concurrent.TimeUnit;
+
 import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertTrue;
 import static ru.yandex.praktikum.TestUtils.MAIN_PAGE_URL;
@@ -30,7 +32,6 @@ public class ConstructorTest {
     @DisplayName("Работает переход к разделам:«Булки»")
     public void testCheckTransitionToBulkSection() throws InterruptedException {
         mainPage.clickButtonFillings();
-        sleep(1000);
         mainPage.clickButtonBulk();
         assertTrue(mainPage.isBulkSuccessful());
     }

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import static java.time.Duration.ofSeconds;
 
@@ -72,12 +73,8 @@ public class MainPage {
 
     @Step("Проверяем успешность отображения секции Булки")
     public boolean isBulkSuccessful() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        webDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(sectionSelectedLocator));
         Assert.assertEquals("Булки", element.getText());
         return element.isDisplayed();
@@ -85,12 +82,8 @@ public class MainPage {
 
     @Step("Проверяем успешность отображения секции Соусы")
     public boolean isSaucesSuccessful() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        webDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(sectionSelectedLocator));
         Assert.assertEquals("Соусы", element.getText());
         return element.isDisplayed();
@@ -98,13 +91,8 @@ public class MainPage {
 
     @Step("Проверяем успешность отображения секции Начинки")
     public boolean isFillingsSuccessful() {
-        try {
-            // Пауза на 3 секунды
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        webDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(sectionSelectedLocator));
         Assert.assertEquals("Начинки", element.getText());
         return element.isDisplayed();
