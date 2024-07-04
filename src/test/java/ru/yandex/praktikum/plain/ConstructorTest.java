@@ -9,9 +9,6 @@ import org.openqa.selenium.WebDriver;
 import ru.yandex.praktikum.WebDriverFactory;
 import ru.yandex.praktikum.page.MainPage;
 
-import java.util.concurrent.TimeUnit;
-
-import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertTrue;
 import static ru.yandex.praktikum.TestUtils.MAIN_PAGE_URL;
 
@@ -30,7 +27,7 @@ public class ConstructorTest {
     @Test
     @Description("Я сперва перехожу к разделу начинок так как по умолчанию и так выбрана секция булок, а нужно проверить именно переход. Ставим задержку чтобы успела отработать анимация")
     @DisplayName("Работает переход к разделам:«Булки»")
-    public void testCheckTransitionToBulkSection() throws InterruptedException {
+    public void testCheckTransitionToBulkSection() {
         mainPage.clickButtonFillings();
         mainPage.clickButtonBulk();
         assertTrue(mainPage.isBulkSuccessful());
